@@ -1,0 +1,36 @@
+mern_info
+=====================
+1) server
+	1) npm init 	// package.json generate
+2) express:
+	1) about express
+		a) express.js:  lightweight and flexible web application framework for Node.js
+		b) simplifies structures 
+		c) work on server-side applications(backend) developers to build APIs
+	2) install
+		a) npm install express
+		b) npm install express --save
+3) nodemon:
+	npm install nodemon
+4) .env
+	1) about env
+		a) plain text file
+		b) used to store application configuration settings and environment variables
+		c) sensitive data like API keys or database credentials.
+	2) install
+		npm install dotenv
+	3) create a file name must have .env
+	4) config in server file
+		require('dotenv').config();			// config in your server file
+		const port = process.env.PORT || 9800		// access .env variable
+5) cors (Cross-Origin Resource Sharing)
+	1) npm install cors
+-----------------------------------------------
+6) database integrate
+	1)  
+
+
+		
+		
+
+	
