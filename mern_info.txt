@@ -27,7 +27,9 @@ mern_info
 	1) npm install cors
 -----------------------------------------------
 6) database integrate
-	1)  
+7) external routing page
+8) create model page (schima type, datatype)
+9) express.use()
 
 
 		

@@ -9,9 +9,9 @@ const port = process.env.PORT || 9800
 
 
 myapp.use(express.json());
+myapp.use(cors());
 myapp.use(myrouteing);
 
-myapp.use(cors());
 
 
 myapp.listen(port,()=>{

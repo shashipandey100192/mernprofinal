@@ -1,6 +1,7 @@
+'Access-Control-Allow-Origin'
 const express = require('express');
 const myapp = express.Router();
-// require('../models/querymodel')
+
 const mymodel = require('../models/querymodel');
 
 myapp.get("/",(req,res)=>{
@@ -13,7 +14,6 @@ myapp.get("/home",(req,res)=>{
 
 myapp.get("/about",async(req,res)=>{
     const abc = await mymodel.find();
-    // res.send(abc);
     res.send({data:abc,status:255,message:"successfully all data get"});
     console.log(abc);
 })
