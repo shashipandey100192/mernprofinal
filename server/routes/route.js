@@ -16,7 +16,18 @@ myapp.get("/about",async(req,res)=>{
     const abc = await mymodel.find();
     res.send({data:abc,status:255,message:"successfully all data get"});
     console.log(abc);
+});
+
+myapp.post("/addemp",async(req,res)=>{
+        const {email,fullname,phone,gender,role,pass} = req.body;
+        const adduser = new mymodel({
+            email,fullname,phone,gender,role,pass
+        });
+        await adduser.save();
+        res.status(200).json(adduser);
+        console.log(adduser);
 })
+
 
 
 module.exports = myapp

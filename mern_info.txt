@@ -27,9 +27,18 @@ mern_info
 	1) npm install cors
 -----------------------------------------------
 6) database integrate
+	1) npm install mongoose
+	2) import
 7) external routing page
+	1) create rout.js page
+	2) export
+	3) required in server.js page
+	4) use()
 8) create model page (schima type, datatype)
 9) express.use()
+-----------------------------------------
+10) create API
+	POST 
 
 
 		

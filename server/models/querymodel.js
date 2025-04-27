@@ -2,8 +2,29 @@ const mongoose = require('mongoose');
 
 
 const mydatatype = new mongoose.Schema({
-name:{},
-age:{}
+email:{
+    type:String
+},
+fullname:{
+    type:String
+},
+phone:{
+    type:String
+},
+gender:{
+    type:String
+},
+role:{
+    type:String
+},
+pass:{
+    type:String
+},
+date_at:{
+    type: Date, 
+    required: true,
+    default: Date.now
+}
 
 }) 
 

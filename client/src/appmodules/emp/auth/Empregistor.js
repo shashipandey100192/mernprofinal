@@ -2,20 +2,22 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from "react-hook-form"
 import {toast,ToastContainer} from "react-toastify";
+import axios from 'axios';
 
 function Empregistor() {
     const xyz = useNavigate();
     
-
     const {register,handleSubmit,formState: { errors }} = useForm()
 
-const mysubmit = (e)=>{
-    console.log(e);
+const mysubmit = async(e)=>{
+    const mydata = await axios.post('http://localhost:5700/addemp',e).then((d)=>{
+        console.log(d);
+    })
     toast.success("data successfully submited",{position: "top-left",autoClose: 2000,theme: "dark"});
     setTimeout(()=>{
         xyz("/employee");
     },2000);
-    
+
 }
 
 
@@ -70,7 +72,7 @@ const mysubmit = (e)=>{
                             <div className='col-md-6'>
                                 <div className="mb-3">
                                     <label className="form-label">Role</label>
-                                    <select className='form-select' {...register("role")}>
+                                    <select className='form-select' name='role' {...register("role")}>
                                         <option hidden>Select Role type</option>
                                         <option>Employee</option>
                                         <option>Admin</option>
