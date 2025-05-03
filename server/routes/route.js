@@ -26,7 +26,16 @@ myapp.post("/addemp",async(req,res)=>{
         await adduser.save();
         res.status(200).json(adduser);
         console.log(adduser);
+});
+
+
+myapp.delete("/singedataremove/:id", async(req,res)=>{
+            const id= req.params.id;
+            console.log(id);
+            const singledata = await mymodel.findByIdAndDelete({_id:id});
+            res.status(200).json(singledata);
 })
+
 
 
 
