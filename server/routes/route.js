@@ -34,6 +34,29 @@ myapp.delete("/singedataremove/:id", async(req,res)=>{
             console.log(id);
             const singledata = await mymodel.findByIdAndDelete({_id:id});
             res.status(200).json(singledata);
+});
+
+
+myapp.post("/userlogin", async(req,res)=>{
+    const {email,pass} = req.body;
+    const mydata = await mymodel.findOne({email:email});
+    // console.log(mydata);
+    if(!mydata)
+    {
+        res.status(219).json({data:mydata,msg:"data not found",status:420});
+    }
+    else{
+       
+        if(mydata.email===email && mydata.pass===pass)
+        {
+            res.status(251).json({data:mydata,msg:"welcome to login",status:251});
+        }
+        else
+        {
+            res.status(250).json({msg:"email and password don't match ",status:430});
+        }
+    }
+
 })
 
 

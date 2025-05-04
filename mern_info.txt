@@ -38,7 +38,10 @@ mern_info
 9) express.use()
 -----------------------------------------
 10) create API
-	POST 
+	1) get api
+	2) post api
+	3) delete api
+	
 
 
 		
