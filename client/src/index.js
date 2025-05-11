@@ -21,6 +21,8 @@ import { Mystorage } from './appmodules/redux/Mystore';
 import Myreduxpage from './appmodules/redux/Myreduxpage';
 import Jsonpage from './appmodules/emp/dashboard/Jsonpage';
 import Jsonpagedata from './appmodules/emp/dashboard/Jsonpagedata.tsx';
+import Empdetails from './appmodules/emp/dashboard/Empdetails.js';
+import Empeditpage from './appmodules/emp/dashboard/Empeditpage.js';
 // import Mylazypage from './appmodules/emp/dashboard/Mylazypage';
 const Mylazypage = lazy(()=>import('./appmodules/emp/dashboard/Mylazypage'));
 
@@ -36,7 +38,10 @@ root.render(
             <Route path='employee' element={<EmpLogin/>}></Route>
             <Route path='employee/registor' element={<Empregistor/>}></Route>
             <Route path='empmainpage' element={<Empmainpage/>}>
-              <Route path='' element={<EmpHomepage/>}></Route>
+              <Route path='' element={<Empdetailspage/>}></Route>
+              <Route path='userdetails/:id' element={<Empdetails/>}></Route>
+              <Route path='useredit/:id' element={<Empeditpage/>}></Route>
+              
               <Route path='property' element={<Empproperty/>}></Route>
               <Route path='mydata' element={<Empdatabinding/>}></Route>
               <Route path='myaxios' element={<Myaxios/>}></Route>

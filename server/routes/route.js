@@ -12,7 +12,7 @@ myapp.get("/home",(req,res)=>{
     res.send("this is home page");
 });
 
-myapp.get("/about",async(req,res)=>{
+myapp.get("/allemp",async(req,res)=>{
     const abc = await mymodel.find();
     res.send({data:abc,status:255,message:"successfully all data get"});
     console.log(abc);
@@ -58,6 +58,13 @@ myapp.post("/userlogin", async(req,res)=>{
     }
 
 })
+
+
+myapp.get("/singleemp/:id", async(req,res)=>{
+            const id= req.params.id;
+            const singledata = await mymodel.findById({_id:id});
+            res.status(200).json(singledata);
+});
 
 
 

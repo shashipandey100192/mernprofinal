@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { MdDelete, MdRemoveRedEye } from "react-icons/md";
 import { PiPencilSimpleLineFill } from "react-icons/pi";
+import { Link } from 'react-router-dom';
 
 function Empdetailspage() {
   const [users, setusers] = useState([])
 
   const Myaxiosfunc = async () => {
-    await axios.get('http://localhost:5700/about').then((d) => {
+    await axios.get('http://localhost:5700/allemp').then((d) => {
       console.log(d.data.data);
       setusers(d.data.data);
     })
@@ -58,9 +59,9 @@ const myremove = async(id)=>{
                 <td>{d.gender}</td>
                 <td>{d.role}</td>
                 <td>
-                  <span class="badge cfs text-white bg-success"><MdRemoveRedEye /></span>
-                  <span class="badge cfs text-white bg-warning ms-1"><PiPencilSimpleLineFill /></span>
-                  <span class="badge cfs text-white bg-danger ms-1" onClick={()=>{myremove(d._id)}}><MdDelete /></span>
+                  <Link to={`userdetails/`+d._id} class="badge btn cfs text-white bg-success"><MdRemoveRedEye /></Link>
+                  <Link to={`useredit/`+d._id} class="badge btn cfs text-white bg-warning ms-1"><PiPencilSimpleLineFill /></Link>
+                  <span class="badge btn cfs text-white bg-danger ms-1" onClick={()=>{myremove(d._id)}}><MdDelete /></span>
                 </td>
               </tr>
                     )
